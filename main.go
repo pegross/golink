@@ -34,7 +34,7 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", index).Methods("GET")
 	router.HandleFunc("/", store).Methods("POST")
-	router.HandleFunc("/{id}", resolve).Methods("GET")
+	router.HandleFunc("/{slug}", resolve).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":9090", router))
 }

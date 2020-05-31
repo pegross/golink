@@ -41,7 +41,7 @@ func store(w http.ResponseWriter, r *http.Request) {
 func resolve(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	var link Link
-	db.Where("slug = ?", params["id"]).First(&link)
+	db.Where("slug = ?", params["slug"]).First(&link)
 	log.Println(link.Slug, link.Target)
 	http.Redirect(w, r, link.Target, 302)
 }

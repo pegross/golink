@@ -2,7 +2,7 @@ package main
 
 import "math/rand"
 
-var idRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890")
+var slugRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890")
 
 // Generate a random identifier from our set of runes
 func uniqueSlug(length int) string {
@@ -27,7 +27,7 @@ func uniqueSlug(length int) string {
 func randSlug(length int) string {
 	runes := make([]rune, length)
 	for i := range runes {
-		runes[i] = idRunes[rand.Intn(len(idRunes))]
+		runes[i] = slugRunes[rand.Intn(len(slugRunes))]
 	}
 	return string(runes)
 }
